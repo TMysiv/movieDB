@@ -1,0 +1,28 @@
+.container {
+  width: 80%;
+  margin: 2% auto;
+}
+
+.container_popular {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+.popular {
+  display: flex;
+  column-gap: 10px;
+}
+
+
+.pop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.pop h3 {
+  margin: 0;
+}
