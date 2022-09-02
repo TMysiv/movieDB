@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { MovieRoutingModule } from './movie-routing.module';
 import { MovieComponent } from './component/movie/movie.component';
+import {MovieService} from "./services/movie.service";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { MovieComponent } from './component/movie/movie.component';
   ],
   imports: [
     CommonModule,
-    MovieRoutingModule
-  ]
+    MovieRoutingModule,
+    HttpClientModule
+  ],
+  providers:[MovieService]
 })
 export class MovieModule { }

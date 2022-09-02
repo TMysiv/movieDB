@@ -105,5 +105,8 @@
       }
     }
   },
-  "defaultProject": "movieDB"
+  "defaultProject": "movieDB",
+  "cli": {
+    "analytics": false
+  }
 }
