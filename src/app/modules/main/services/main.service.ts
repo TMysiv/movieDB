@@ -11,7 +11,7 @@ export class MainService {
   apikey:string = 'api_key=4cccab37e6e3e72708b67cea6b17afb5'
 
   private url = 'https://api.themoviedb.org/3/movie/'
-  private urlTV ='https://api.themoviedb.org/3/tv/'
+  private urlWithGenres ='https://api.themoviedb.org/3/discover/movie?'
 
   constructor(private httpClient:HttpClient) { }
 
@@ -31,12 +31,12 @@ export class MainService {
     return this.httpClient.get<IMovies>(this.url + 'upcoming?' + this.apikey)
   }
 
-  getTvOnTheAir():Observable<IMovies>{
-    return this.httpClient.get<IMovies>(this.urlTV + 'on_the_air?' + this.apikey)
+  getActions():Observable<IMovies>{
+    return this.httpClient.get<IMovies>(this.urlWithGenres + this.apikey + '&with_genres=28')
   }
 
-  getPopularSerials():Observable<IMovies>{
-    return this.httpClient.get<IMovies>(this.urlTV + 'popular?' + this.apikey)
+  getHistory():Observable<IMovies>{
+    return this.httpClient.get<IMovies>(this.urlWithGenres  + this.apikey + '&with_genres=36')
   }
 
 }

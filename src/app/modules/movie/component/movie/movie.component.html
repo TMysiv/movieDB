@@ -1,1 +1,34 @@
-<p>movie works!</p>
+<div class="container">
+  <youtube-player *ngIf="videoDetails"
+    videoId="{{videoDetails.key}}"
+    suggestedQuality="highres"
+    [height]="500"
+    [width]="1100"
+    [startSeconds]="0"
+  >
+  </youtube-player>
+
+  <div class="description">
+
+    <div *ngIf="movieDetails" class="movieDetails">
+      <h2>Description</h2>
+      <p class="title">{{movieDetails.overview}}</p>
+      <p><span style="font-weight: bold">Run time:</span> {{movieDetails.runtime}} minutes</p>
+      <p><span style="font-weight: bold">Genres: </span>
+        <span *ngFor="let genre of movieDetails.genres" >{{genre.name}},  </span></p>
+      <p><span style="font-weight: bold">Release Date:</span> {{movieDetails.release_date}}</p>
+      <p><span style="font-weight: bold">Budget:</span> {{movieDetails.budget}} $</p>
+    </div>
+      <h2>Actors</h2>
+    <div *ngIf="cast" class="actors">
+      <div *ngFor="let c of cast" >
+        <img src="https://image.tmdb.org/t/p/w200/{{c.profile_path}}" alt="{{c.name}}">
+        <p>{{c.name}}</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+

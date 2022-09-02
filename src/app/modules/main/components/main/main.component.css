@@ -3,18 +3,17 @@
   margin: 2% auto;
 }
 
-.container_popular {
+.container_movie {
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
 }
-.popular {
+.movies {
   display: flex;
   column-gap: 10px;
 }
 
-
-.pop {
+.movie {
   display: flex;
   flex-direction: column;
   justify-content: center;

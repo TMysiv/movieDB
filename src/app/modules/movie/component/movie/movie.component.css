@@ -1,0 +1,32 @@
+.container {
+  width: 80%;
+  margin: 2% auto;
+}
+
+.description {
+  width: 90%;
+  margin: 2% auto;
+}
+
+.actors {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.actors img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 5px;
+}
+.title {
+  font-style: italic;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.unknownImage{
+  width: 100px;
+  height: 100px;
+  background: bisque;
+}

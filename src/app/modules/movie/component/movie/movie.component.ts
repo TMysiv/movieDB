@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {MovieService} from "../../services/movie.service";
 import {IMovieDetails} from "../../../../interfaces/movie-details";
 import {IVideoDetail} from "../../../../interfaces/video-details";
+import {ICast} from "../../../../interfaces/cast";
 
 @Component({
   selector: 'app-movie',
@@ -13,6 +14,7 @@ export class MovieComponent implements OnInit {
 
   movieDetails:IMovieDetails;
   videoDetails:IVideoDetail;
+  cast:ICast[]
 
   constructor(private activatedRoute:ActivatedRoute,private movieService:MovieService) { }
 
@@ -24,7 +26,9 @@ export class MovieComponent implements OnInit {
       })
       this.movieService.getMovieVideo(id).subscribe(video => {
         this.videoDetails = video.results[0]
-        console.log(this.videoDetails)
+      })
+      this.movieService.getCasts(id).subscribe(actors => {
+        this.cast = actors.cast.slice(0,8)
       })
 
     })

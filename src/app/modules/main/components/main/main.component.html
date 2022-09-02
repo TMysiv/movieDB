@@ -1,70 +1,29 @@
 <ngb-carousel *ngIf="nowPlaying">
   <ng-template *ngFor="let movie of nowPlaying" ngbSlide>
-    <a [routerLink]="[movie.id]" [state]="{data:movie}">
-    <div class="picsum-img-wrapper">
-      <img src="https://image.tmdb.org/t/p/original/{{movie.backdrop_path}}" alt="{{movie.title}}" style="height: 450px"
-           width="100%">
-    </div>
-    <div class="carousel-caption">
-      <h1>{{movie.title}}</h1>
-    </div>
+    <a [routerLink]="[movie.id]">
+      <div class="picsum-img-wrapper">
+        <img src="https://image.tmdb.org/t/p/original/{{movie.backdrop_path}}" alt="{{movie.title}}"
+             style="height: 500px"
+             width="100%">
+      </div>
+      <div class="carousel-caption">
+        <h1>{{movie.title}}</h1>
+      </div>
     </a>
   </ng-template>
 </ngb-carousel>
 
 <div class="container">
 
-  <div class="container_popular" *ngIf="popular">
-    <h2>Popular</h2>
-    <div class="popular">
-      <div *ngFor="let pop of popular" class="pop">
-        <img src="https://image.tmdb.org/t/p/w200/{{pop.poster_path}}">
-        <h3>{{pop.title}}</h3>
-        <ngb-rating [rate]="pop.vote_average"></ngb-rating>
-      </div>
-    </div>
-  </div>
-
-  <div class="container_popular" *ngIf="topRated">
-    <h2>Top Rated</h2>
-    <div class="popular">
-      <div *ngFor="let top of topRated" class="pop">
-        <img src="https://image.tmdb.org/t/p/w200/{{top.poster_path}}">
-        <h3>{{top.title}}</h3>
-        <ngb-rating [rate]="top.vote_average"></ngb-rating>
-      </div>
-    </div>
-  </div>
-
-  <div class="container_popular" *ngIf="upComing">
-    <h2>Upcoming</h2>
-    <div class="popular">
-      <div *ngFor="let coming of upComing" class="pop">
-        <img src="https://image.tmdb.org/t/p/w200/{{coming.poster_path}}">
-        <h3>{{coming.title}}</h3>
-        <ngb-rating [rate]="coming.vote_average"></ngb-rating>
-      </div>
-    </div>
-  </div>
-
-  <div class="container_popular" *ngIf="TvOnAir">
-    <h2>Top Serials</h2>
-    <div class="popular">
-      <div *ngFor="let tv of TvOnAir" class="pop">
-        <img src="https://image.tmdb.org/t/p/w200/{{tv.poster_path}}">
-        <h3>{{tv.title}}</h3>
-        <ngb-rating [rate]="tv.vote_average"></ngb-rating>
-      </div>
-    </div>
-  </div>
-
-  <div class="container_popular" *ngIf="popularSerials">
-    <h2>Popular Serials</h2>
-    <div class="popular">
-      <div *ngFor="let serials of popularSerials" class="pop">
-        <img src="https://image.tmdb.org/t/p/w200/{{serials.poster_path}}">
-        <h3>{{serials.title}}</h3>
-        <ngb-rating [rate]="serials.vote_average"></ngb-rating>
+  <div class="container_movie" *ngFor="let movie of movies">
+    <h2>{{movie.name}}</h2>
+    <div class="movies">
+      <div *ngFor="let item of movie.value" class="movie">
+        <a [routerLink]="[item.id]">
+          <img src="https://image.tmdb.org/t/p/w200/{{item.poster_path}}">
+        </a>
+        <h3>{{item.title}}</h3>
+        <ngb-rating [rate]="item.vote_average"></ngb-rating>
       </div>
     </div>
   </div>

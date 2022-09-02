@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {IMovieDetails} from "../../../interfaces/movie-details";
 import {IVideoDetails} from "../../../interfaces/video-details";
+import {ICasts} from "../../../interfaces/cast";
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,9 @@ export class MovieService {
 
   getMovieVideo(id:string):Observable<IVideoDetails>{
     return this.httpClient.get<IVideoDetails>(this.url + id + '/videos?' + this.apikey)
+  }
+
+  getCasts(id:string):Observable<ICasts>{
+    return this.httpClient.get<ICasts>(this.url + id + '/credits?' + this.apikey)
   }
 }
