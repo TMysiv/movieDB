@@ -1,9 +1,9 @@
 <mat-toolbar class="header">
-  <span>MOVIES</span>
-  <ul>
+  <span><a [routerLink]="['']">MOVIES</a></span>
+  <ul class="menu">
     <li><a [routerLink]="['films']">Films</a></li>
-    <li><a href="#">Serials</a></li>
-    <li><a href="#">Actors</a></li>
+    <li><a [routerLink]="['serials']">Serials</a></li>
+    <li><a [routerLink]="['actors']">Actors</a></li>
   </ul>
 
 </mat-toolbar>

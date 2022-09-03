@@ -1,6 +1,6 @@
 <ngb-carousel *ngIf="nowPlaying">
   <ng-template *ngFor="let movie of nowPlaying" ngbSlide>
-    <a [routerLink]="[movie.id]">
+    <a [routerLink]="['movies',movie.id]">
       <div class="picsum-img-wrapper">
         <img src="https://image.tmdb.org/t/p/original/{{movie.backdrop_path}}" alt="{{movie.title}}"
              style="height: 500px"
@@ -19,7 +19,7 @@
     <h2>{{movie.name}}</h2>
     <div class="movies">
       <div *ngFor="let item of movie.value" class="movie">
-        <a [routerLink]="[item.id]">
+        <a [routerLink]="['movies',item.id]">
           <img src="https://image.tmdb.org/t/p/w200/{{item.poster_path}}">
         </a>
         <h3>{{item.title}}</h3>

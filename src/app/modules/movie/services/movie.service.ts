@@ -10,7 +10,7 @@ import {ICasts} from "../../../interfaces/cast";
 })
 export class MovieService {
 
-  private url = 'https://api.themoviedb.org/3/movie/'
+  private url:string = 'https://api.themoviedb.org/3/movie/'
   private apikey:string = 'api_key=4cccab37e6e3e72708b67cea6b17afb5'
 
   constructor(private httpClient:HttpClient) { }
