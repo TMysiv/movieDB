@@ -7,7 +7,8 @@ import {MovieComponent} from "../movie/component/movie/movie.component";
 const routes: Routes = [
   {path: '', component: FilmsComponent},
   {path:':id',component:MovieComponent},
-  {path: 'genre/:name', component: FilmByGenreComponent}
+  {path: 'genre/:name', component: FilmByGenreComponent},
+  {path:'genre/:name/:id',component:MovieComponent}
 ]
 
 @NgModule({

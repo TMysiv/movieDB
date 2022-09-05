@@ -10,20 +10,20 @@ import {ICasts} from "../../../interfaces/cast";
 })
 export class MovieService {
 
-  private url:string = 'https://api.themoviedb.org/3/movie/'
+  private url:string = 'https://api.themoviedb.org/3/'
   private apikey:string = 'api_key=4cccab37e6e3e72708b67cea6b17afb5'
 
   constructor(private httpClient:HttpClient) { }
 
-  getMovieDetails(id:string):Observable<IMovieDetails>{
-    return this.httpClient.get<IMovieDetails>(this.url + id + '?' + this.apikey)
+  getMovieDetails(id:string,movieOrSerials:string):Observable<IMovieDetails>{
+    return this.httpClient.get<IMovieDetails>(this.url + `${movieOrSerials}/` + id + '?' + this.apikey)
   }
 
-  getMovieVideo(id:string):Observable<IVideoDetails>{
-    return this.httpClient.get<IVideoDetails>(this.url + id + '/videos?' + this.apikey)
+  getMovieVideo(id:string,movieOrSerials:string):Observable<IVideoDetails>{
+    return this.httpClient.get<IVideoDetails>(this.url +`${movieOrSerials}/` + id + '/videos?' + this.apikey)
   }
 
-  getCasts(id:string):Observable<ICasts>{
-    return this.httpClient.get<ICasts>(this.url + id + '/credits?' + this.apikey)
+  getCasts(id:string,movieOrSerials:string):Observable<ICasts>{
+    return this.httpClient.get<ICasts>(this.url + `${movieOrSerials}/` + id + '/credits?' + this.apikey)
   }
 }

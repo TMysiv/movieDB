@@ -1,0 +1,31 @@
+<div class="container">
+
+  <div class="genres">
+    <div *ngFor="let genre of genres" class="genre">
+      <a [routerLink]="['genre',genre.name]" [state]="genre">{{genre.name}}</a>
+    </div>
+  </div>
+
+  <div class="films" *ngIf="films">
+
+    <div *ngFor="let film of films" class="film">
+      <a [routerLink]="[film.id]">
+        <img src="https://image.tmdb.org/t/p/w200/{{film.poster_path}}">
+      </a>
+      <h4>{{film.title}}</h4>
+      <ngb-rating [rate]="film.vote_average"></ngb-rating>
+    </div>
+  </div>
+
+  <ngb-pagination
+    [collectionSize]="1000"
+    [(page)]="pageId"
+    [maxSize]="5"
+    [boundaryLinks]="true"
+    (pageChange)="onPageChange($event)"
+    class="d-flex justify-content-center mt-5 text-black"
+  ></ngb-pagination>
+
+
+</div>
+

@@ -1,0 +1,39 @@
+.container {
+  width: 80%;
+  margin: 2% auto;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  padding: 3%;
+}
+
+.films {
+  display: flex;
+  column-gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  row-gap: 20px;
+}
+
+.film {
+  display: flex;
+  width: 19%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  row-gap: 10px;
+  height: 23%;
+}
+
+.film h4 {
+  margin: 0;
+}
+
+
+
+
+
