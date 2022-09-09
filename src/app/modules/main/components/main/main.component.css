@@ -22,6 +22,11 @@
   row-gap: 10px;
 }
 
-.pop h3 {
+.movie:hover{
+  transform: scale(1.2);
+}
+
+.movie h3 {
   margin: 0;
+  font-size: 12px;
 }

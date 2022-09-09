@@ -1,0 +1,39 @@
+.container {
+  width: 80%;
+  margin: 2% auto;
+}
+
+.container_actors {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1%;
+
+}
+
+.actor {
+  margin-top: 1%;
+  width: 19%;
+  background: white;
+  box-shadow: 2px 2px 2px gainsboro;
+  text-align: center;
+
+}
+
+.actor:hover{
+  transform: scale(1.2);
+}
+.actor h4{
+  font-weight: bold;
+  margin-top: 10px;
+}
+.actor_image {
+  width: 100%;
+  height: 250px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+

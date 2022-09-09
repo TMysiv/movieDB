@@ -1,0 +1,13 @@
+<div class="container" *ngIf="actorDetails">
+  <div >
+    <img src="https://image.tmdb.org/t/p/w300/{{actorDetails.profile_path}}"
+         alt="{{actorDetails.name}}"
+         class="actor_image">
+  </div>
+  <div class="profile">
+    <h1>{{actorDetails.name}}</h1>
+    <h2>Biography</h2>
+    <p>{{actorDetails.biography}}</p>
+
+  </div>
+</div>

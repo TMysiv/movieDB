@@ -1,0 +1,18 @@
+.container {
+  margin: 2% auto;
+  display: flex;
+  column-gap: 30px;
+}
+
+.actor_image {
+  border-radius: 10px;
+}
+
+.profile h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.profile p {
+  font-size: 15px;
+}

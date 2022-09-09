@@ -29,6 +29,10 @@ a{
   height: 23%;
 }
 
+.film:hover {
+  transform: scale(1.2);
+}
+
 .film h4 {
   margin: 0;
 }
