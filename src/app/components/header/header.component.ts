@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  favorites:number = 0;
 
 
   constructor() { }
 
   ngOnInit(): void {
+    this.favorites = localStorage.getItem('favorites')!.length;
   }
 
 }

@@ -1,6 +1,7 @@
 .container {
   width: 80%;
   margin: 2% auto;
+  min-height: 1000px;
 }
 
 .container_movie {
@@ -20,6 +21,7 @@
   text-align: center;
   align-items: center;
   row-gap: 10px;
+  position: relative;
 }
 
 .movie:hover{
@@ -29,4 +31,15 @@
 .movie h3 {
   margin: 0;
   font-size: 12px;
+}
+
+.addMovie{
+  position: absolute;
+  top:5%;
+  right: 5%;
+}
+
+.mat-icon {
+  font-size: 30px;
+  color: white !important;
 }

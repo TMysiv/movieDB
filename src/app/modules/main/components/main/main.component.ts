@@ -46,4 +46,7 @@ export class MainComponent implements OnInit {
     })
   }
 
+  addMovie(item: any) {
+    localStorage.setItem('favorites',JSON.stringify(item))
+  }
 }

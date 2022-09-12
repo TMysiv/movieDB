@@ -1,9 +1,21 @@
 <mat-toolbar class="header">
-  <span><a [routerLink]="['']">MOVIES</a></span>
-  <ul class="menu">
-    <li><a [routerLink]="['movie']">Films</a></li>
-    <li><a [routerLink]="['tv']">Serials</a></li>
-    <li><a [routerLink]="['actors']">Actors</a></li>
-  </ul>
+  <div class="menu">
+    <span><a [routerLink]="['']">MOVIES</a></span>
+    <ul>
+      <li><a [routerLink]="['movie']">Films</a></li>
+      <li><a [routerLink]="['tv']">Serials</a></li>
+      <li><a [routerLink]="['actors']">Actors</a></li>
+    </ul>
+  </div>
+
+  <div>
+    <button mat-icon-button [routerLink]="['favorites']">
+      <mat-icon matBadge="{{favorites > 0 ? favorites : '' }}"
+                matBadgeColor="warn" class="material-icons color_white"
+                matBadgeSize="small">
+        favorite
+      </mat-icon>
+    </button>
+  </div>
 
 </mat-toolbar>

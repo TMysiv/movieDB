@@ -6,6 +6,8 @@ import { MainComponent } from './components/main/main.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MainService} from "./services/main.service";
 import {NgbCarouselModule, NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import {NgbCarouselModule, NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
     HttpClientModule,
     NgbCarouselModule,
     NgbRatingModule,
+    MatIconModule,
+    MatButtonModule,
   ],
   providers:[MainService]
 })

@@ -9,6 +9,9 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {AppRoutingModule} from "./app.routing.module";
 import {RouterModule} from "@angular/router";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {MatIconModule} from "@angular/material/icon";
+import {MatBadgeModule} from "@angular/material/badge";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatToolbarModule,
     AppRoutingModule,
     RouterModule,
-    NgbModule
+    NgbModule,
+    MatIconModule,
+    MatBadgeModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

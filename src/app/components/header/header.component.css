@@ -1,19 +1,25 @@
 .header {
   background: black;
   display: flex;
-  column-gap: 100px;
   height: 50px;
+  align-items: center;
+  justify-content: space-between;
 }
-.header span a {
+
+.menu {
+  display: flex;
+  column-gap: 100px;
+}
+.menu span a {
   color: rgb(105,199,180);
   font-size: 25px;
 }
 
-ul{
+.menu ul{
   display: flex;
   margin: 0;
 }
-li{
+.menu li{
   list-style: none;
   margin-right: 30px;
 }
@@ -26,5 +32,10 @@ a{
 .menu a:hover{
   color: red;
 }
+
+.material-icons.color_white {
+  color: white;
+}
+
 
 

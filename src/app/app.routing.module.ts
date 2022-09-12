@@ -6,7 +6,8 @@ const routes:Routes = [
   {path:'movies/:id' , loadChildren :() => import('./modules/movie/movie.module').then(value => value.MovieModule)},
   {path:'movie' , loadChildren :() => import('./modules/films/films.module').then(value => value.FilmsModule)},
   {path:'tv', loadChildren :() => import('./modules/films/films.module').then(value => value.FilmsModule)},
-  {path:'actors', loadChildren :() => import('./modules/actors/actors.module').then(value => value.ActorsModule)}
+  {path:'actors', loadChildren :() => import('./modules/actors/actors.module').then(value => value.ActorsModule)},
+  {path:'favorites', loadChildren :() => import('./modules/favorites/favorites.module').then(value => value.FavoritesModule)}
 ]
 
 @NgModule({
