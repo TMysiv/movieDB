@@ -53,15 +53,26 @@ a{
   display: flex;
   width: 19%;
   flex-direction: column;
-  justify-content: center;
   text-align: center;
   align-items: center;
   row-gap: 10px;
   height: 23%;
+  position: relative;
 }
 
 .film h4 {
   margin: 0;
+}
+
+.addMovie{
+  position: absolute;
+  top:5%;
+  right: 5%;
+}
+
+.mat-icon {
+  font-size: 30px;
+  color: white !important;
 }
 
 

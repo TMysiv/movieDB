@@ -15,28 +15,29 @@ export class MainService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getNowPlaying():Observable<IMovies>{
-    return this.httpClient.get<IMovies>(this.url + 'now_playing?' + this.apikey)
+  getNowPlaying(language:string):Observable<IMovies>{
+    return this.httpClient.get<IMovies>(this.url + 'now_playing?' + this.apikey + `&language=${language}`)
   }
 
-  getPopular():Observable<IMovies>{
-    return this.httpClient.get<IMovies>(this.url + 'popular?' + this.apikey)
+  getPopular(language:string):Observable<IMovies>{
+    return this.httpClient.get<IMovies>(this.url + 'popular?' + this.apikey + `&language=${language}`)
   }
 
-  getTopRated():Observable<IMovies>{
-    return this.httpClient.get<IMovies>(this.url + 'top_rated?' + this.apikey)
+  getTopRated(language:string):Observable<IMovies>{
+    return this.httpClient.get<IMovies>(this.url + 'top_rated?' + this.apikey + `&language=${language}`)
   }
 
-  getupComing():Observable<IMovies>{
-    return this.httpClient.get<IMovies>(this.url + 'upcoming?' + this.apikey)
+  getupComing(language:string):Observable<IMovies>{
+    return this.httpClient.get<IMovies>(this.url + 'upcoming?' + this.apikey + `&language=${language}`)
   }
 
-  getActions():Observable<IMovies>{
-    return this.httpClient.get<IMovies>(this.urlWithGenres + this.apikey + '&with_genres=28')
+  getActions(language:string):Observable<IMovies>{
+    return this.httpClient.get<IMovies>(this.urlWithGenres + this.apikey + '&with_genres=28' + `&language=${language}`)
   }
 
-  getHistory():Observable<IMovies>{
-    return this.httpClient.get<IMovies>(this.urlWithGenres  + this.apikey + '&with_genres=36')
+  getHistory(language:string):Observable<IMovies>{
+    return this.httpClient.get<IMovies>(this.urlWithGenres  + this.apikey + '&with_genres=36' + `&language=${language}`)
   }
+
 
 }

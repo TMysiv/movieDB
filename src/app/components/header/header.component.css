@@ -33,9 +33,18 @@ a{
   color: red;
 }
 
-.material-icons.color_white {
+.icons_color {
   color: white;
+  font-size: 25px;
 }
+
+.mat-menu-item{
+  line-height:25px;
+  height:25px;
+
+}
+
+
 
 
 

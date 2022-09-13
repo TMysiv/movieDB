@@ -7,8 +7,13 @@
       <a [routerLink]="[film.id]">
         <img src="https://image.tmdb.org/t/p/w200/{{film.poster_path}}">
       </a>
-      <h4>{{film.title}}</h4>
+      <div class="addMovie">
+        <button mat-icon-button (click)="addMovie(film)">
+          <mat-icon class="mat-icon">favorite</mat-icon>
+        </button>
+      </div>
       <ngb-rating [rate]="film.vote_average"></ngb-rating>
+      <h4>{{movieOrSerial === 'movie' ? film.title : film.name}}</h4>
     </div>
   </div>
 

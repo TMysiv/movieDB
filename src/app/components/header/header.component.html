@@ -9,9 +9,18 @@
   </div>
 
   <div>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon class="icons_color">language icon</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="chooseLanguage('en-US')">ENG</button>
+      <button mat-menu-item (click)="chooseLanguage('uk-UK')">УКР</button>
+    </mat-menu>
+
     <button mat-icon-button [routerLink]="['favorites']">
-      <mat-icon matBadge="{{favorites > 0 ? favorites : '' }}"
-                matBadgeColor="warn" class="material-icons color_white"
+      <mat-icon matBadge="{{favorites ? favorites : '' }}"
+                matBadgeColor="warn" class="icons_color"
                 matBadgeSize="small">
         favorite
       </mat-icon>

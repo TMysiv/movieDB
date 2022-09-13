@@ -8,6 +8,7 @@ import {MainService} from "./services/main.service";
 import {NgbCarouselModule, NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {FilmsModule} from "../films/films.module";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import {MatButtonModule} from "@angular/material/button";
     NgbCarouselModule,
     NgbRatingModule,
     MatIconModule,
-    MatButtonModule,
+    MatButtonModule
   ],
   providers:[MainService]
 })

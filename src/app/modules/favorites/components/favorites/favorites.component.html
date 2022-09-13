@@ -1,6 +1,12 @@
 <div class="container" *ngIf="favorites">
-  <div  *ngFor="let item of favorites">
-
+  <div *ngFor="let film of favorites" class="film">
+      <img src="https://image.tmdb.org/t/p/w200/{{film.poster_path}}">
+    <div class="film_details">
+      <button mat-icon-button (click)="removeMovie(film)">
+        <mat-icon class="mat-icon">delete outline icon</mat-icon>
+      </button>
+      <h3>{{film.title ? film.title : film.name}}</h3>
+    </div>
   </div>
 
 </div>

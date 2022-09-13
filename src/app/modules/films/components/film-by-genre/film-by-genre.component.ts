@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FilmsService} from "../../services/films.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {IMovie} from "../../../../interfaces/movie";
+import {AppService} from "../../../../services/app.service";
 
 @Component({
   selector: 'app-film-by-genre',
@@ -16,7 +17,7 @@ export class FilmByGenreComponent implements OnInit {
   genreName: string = '';
   movieOrSerial: string = '';
 
-  constructor(private filmsService: FilmsService, private route: Router) {
+  constructor(private filmsService: FilmsService, private route: Router,private appService:AppService) {
   }
 
   ngOnInit(): void {
@@ -44,4 +45,7 @@ export class FilmByGenreComponent implements OnInit {
     this.getFilms(this.genreId, pageId, this.movieOrSerial)
   }
 
+  addMovie(film: IMovie) {
+    this.appService.addMovie(film)
+  }
 }

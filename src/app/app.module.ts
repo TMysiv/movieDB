@@ -12,6 +12,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MatIconModule} from "@angular/material/icon";
 import {MatBadgeModule} from "@angular/material/badge";
 import {MatButtonModule} from "@angular/material/button";
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -19,17 +20,18 @@ import {MatButtonModule} from "@angular/material/button";
     HeaderComponent,
     FooterComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    AppRoutingModule,
-    RouterModule,
-    NgbModule,
-    MatIconModule,
-    MatBadgeModule,
-    MatButtonModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        AppRoutingModule,
+        RouterModule,
+        NgbModule,
+        MatIconModule,
+        MatBadgeModule,
+        MatButtonModule,
+        MatMenuModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -7,6 +7,8 @@ import {FilmsService} from "./services/films.service";
 import {NgbPaginationModule, NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
 import {MovieModule} from "../movie/movie.module";
 import {FilmByGenreComponent} from "./components/film-by-genre/film-by-genre.component";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [FilmsComponent,FilmByGenreComponent],
@@ -16,7 +18,9 @@ import {FilmByGenreComponent} from "./components/film-by-genre/film-by-genre.com
     HttpClientModule,
     NgbRatingModule,
     MovieModule,
-    NgbPaginationModule
+    NgbPaginationModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers:[FilmsService]
 })

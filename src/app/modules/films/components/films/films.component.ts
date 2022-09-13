@@ -3,6 +3,7 @@ import {IGenre} from "../../../../interfaces/genre";
 import {FilmsService} from "../../services/films.service";
 import {IMovie} from "../../../../interfaces/movie";
 import {Router} from "@angular/router";
+import {AppService} from "../../../../services/app.service";
 
 @Component({
   selector: 'app-films',
@@ -17,7 +18,7 @@ export class FilmsComponent implements OnInit {
 
   pageId:number = 1;
 
-  constructor(private filmsService:FilmsService,private route:Router) { }
+  constructor(private filmsService:FilmsService,private route:Router,private appService:AppService) { }
 
   private getFilms(pageId:number,movieOrSerial:string){
     this.filmsService.getFilms(pageId,movieOrSerial).subscribe(value => {
@@ -38,4 +39,7 @@ export class FilmsComponent implements OnInit {
     this.getFilms(page,this.movieOrSerial)
   }
 
+  addMovie(film: IMovie) {
+   this.appService.addMovie(film)
+  }
 }
