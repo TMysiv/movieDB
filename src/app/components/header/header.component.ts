@@ -10,14 +10,19 @@ import {AppService} from "../../services/app.service";
 export class HeaderComponent implements OnInit {
 
   favorites: number;
+  language:string
 
 
   constructor(private appService:AppService) {
   }
 
   ngOnInit(): void {
-    const movies = localStorage.getItem('favorites');
-    this.favorites = (movies ? JSON.parse(movies) : []).length;
+    this.appService.globalLanguage.subscribe( language =>{
+      this.language = language
+    })
+      const movies = localStorage.getItem('favorites');
+      this.favorites = (movies ? JSON.parse(movies) : []).length;
+
   }
 
   chooseLanguage(language: string) {

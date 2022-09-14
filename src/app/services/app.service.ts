@@ -8,7 +8,7 @@ import {BehaviorSubject} from "rxjs";
 })
 export class AppService {
 
-  store = new BehaviorSubject<string>('')
+  globalLanguage = new BehaviorSubject<string>('')
 
   constructor(private router:Router) {
   }
@@ -30,7 +30,7 @@ export class AppService {
   }
 
   chooseLanguage(lang:string){
-    this.store.next(lang)
+    this.globalLanguage.next(lang)
   }
 
 }

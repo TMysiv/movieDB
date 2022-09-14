@@ -11,15 +11,16 @@
   <div class="description">
 
     <div *ngIf="movieDetails" class="movieDetails">
-      <h2>Description</h2>
+      <h2>{{language === 'uk-UK' ? 'Опис':'Description'}}</h2>
       <p class="title">{{movieDetails.overview}}</p>
-      <p><span style="font-weight: bold">Run time:</span> {{movieDetails.runtime}} minutes</p>
-      <p><span style="font-weight: bold">Genres: </span>
+      <p><span style="font-weight: bold">{{language === 'uk-UK' ? 'Час':'Run time'}}:</span> {{movieDetails.runtime}} minutes</p>
+      <p><span style="font-weight: bold">{{language === 'uk-UK' ? 'Жанри':'Genres'}}Genres: </span>
         <span *ngFor="let genre of movieDetails.genres" >{{genre.name}},  </span></p>
-      <p><span style="font-weight: bold">Release Date:</span> {{movieDetails.release_date}}</p>
-      <p><span style="font-weight: bold">Budget:</span> {{movieDetails.budget}} $</p>
+      <p><span style="font-weight: bold">{{language === 'uk-UK' ? 'Дата Виходу':'Release Date'}}:
+      </span> {{movieDetails.release_date}}</p>
+      <p><span style="font-weight: bold">{{language === 'uk-UK' ? 'Бюджет':'Budget'}}:</span> {{movieDetails.budget}} $</p>
     </div>
-      <h2>Actors</h2>
+      <h2>{{language === 'uk-UK' ? 'Актори':'Actors'}}</h2>
     <div *ngIf="cast" class="actors">
       <div *ngFor="let c of cast" >
         <img src="https://image.tmdb.org/t/p/w200/{{c.profile_path}}" alt="{{c.name}}">

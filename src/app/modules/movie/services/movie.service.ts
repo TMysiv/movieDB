@@ -15,15 +15,18 @@ export class MovieService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getMovieDetails(id:string,movieOrSerials:string):Observable<IMovieDetails>{
-    return this.httpClient.get<IMovieDetails>(this.url + `${movieOrSerials}/` + id + '?' + this.apikey)
+  getMovieDetails(id:string,movieOrSerials:string,language:string):Observable<IMovieDetails>{
+    return this.httpClient.get<IMovieDetails>(
+      this.url + `${movieOrSerials}/` + id + '?' + this.apikey + `&language=${language}`)
   }
 
   getMovieVideo(id:string,movieOrSerials:string):Observable<IVideoDetails>{
-    return this.httpClient.get<IVideoDetails>(this.url +`${movieOrSerials}/` + id + '/videos?' + this.apikey)
+    return this.httpClient.get<IVideoDetails>(
+      this.url +`${movieOrSerials}/` + id + '/videos?' + this.apikey )
   }
 
   getCasts(id:string,movieOrSerials:string):Observable<ICasts>{
-    return this.httpClient.get<ICasts>(this.url + `${movieOrSerials}/` + id + '/credits?' + this.apikey)
+    return this.httpClient.get<ICasts>(
+      this.url + `${movieOrSerials}/` + id + '/credits?' + this.apikey )
   }
 }

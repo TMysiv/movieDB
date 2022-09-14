@@ -2,9 +2,9 @@
   <div class="menu">
     <span><a [routerLink]="['']">MOVIES</a></span>
     <ul>
-      <li><a [routerLink]="['movie']">Films</a></li>
-      <li><a [routerLink]="['tv']">Serials</a></li>
-      <li><a [routerLink]="['actors']">Actors</a></li>
+      <li><a [routerLink]="['movie']">{{language === 'uk-UK' ? 'Фільми' : 'Films'}}</a></li>
+      <li><a [routerLink]="['tv']">{{language === 'uk-UK' ? 'Серіали' : 'Serials'}}</a></li>
+      <li><a [routerLink]="['actors']">{{language === 'uk-UK' ? 'Актори' : 'Actors'}}</a></li>
     </ul>
   </div>
 

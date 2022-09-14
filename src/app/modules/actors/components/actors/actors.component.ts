@@ -12,6 +12,7 @@ export class ActorsComponent implements OnInit {
   actors: IActor[];
   pageId: number = 1;
 
+
   constructor(private actorsService: ActorsService) {
   }
 
@@ -22,7 +23,8 @@ export class ActorsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getActors(this.pageId)
+
+      this.getActors(this.pageId)
   }
 
   onPageChange(page: number) {

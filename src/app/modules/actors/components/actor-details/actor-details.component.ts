@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActorsService} from "../../services/actors.service";
 import {IActorDetails} from "../../../../interfaces/actorDetails";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-actor-details',
@@ -16,15 +16,17 @@ export class ActorDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.url.subscribe((value) => {
 
-      const id = value[0].path;
+      this.activatedRoute.url.subscribe((value) => {
 
-      this.actorsService.getActorDetails(id).subscribe(value => {
-        console.log(value);
-        this.actorDetails = value
+        const id = value[0].path;
+
+        this.actorsService.getActorDetails(id).subscribe(value => {
+          console.log(value);
+          this.actorDetails = value
+        })
       })
-    })
+
   }
 
 }

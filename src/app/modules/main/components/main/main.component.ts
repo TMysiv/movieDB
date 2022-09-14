@@ -12,45 +12,29 @@ import {ActivatedRoute} from "@angular/router";
 export class MainComponent implements OnInit {
 
   nowPlaying: IMovie[] = [];
-  movies: any = [];
+  movies: IMovie[] = [];
+  language:string
 
-  constructor(private mainService: MainService,private appService:AppService,private activatedRoute:ActivatedRoute) {
+
+  constructor(private mainService: MainService, private appService: AppService, private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
 
-    this.appService.store.subscribe(language => {
+    this.appService.globalLanguage.subscribe(language => {
 
+      this.language = language
 
-    this.mainService.getNowPlaying(language).subscribe(value => {
-      this.nowPlaying = value.results
-    })
+      this.mainService.getMovie('now_playing?', language).subscribe(value => {
+        this.nowPlaying = value.results
+      })
 
-    this.mainService.getPopular(language).subscribe(value => {
-      this.movies.push({name: 'Popular', value: value.results.slice(0, 5)})
+        this.mainService.getMovie('top_rated?', language).subscribe(value => {
+        this.movies = value.results
 
-    })
-
-    this.mainService.getTopRated(language).subscribe(value => {
-      this.movies.push({name: 'TopRated', value: value.results.slice(0, 5)})
+      })
 
     })
-
-    this.mainService.getupComing(language).subscribe(value => {
-      this.movies.push({name: 'UpComing', value: value.results.slice(10, 15)})
-
-    })
-
-    this.mainService.getActions(language).subscribe(value => {
-      this.movies.push({name: 'Actions', value: value.results.slice(5, 10)})
-
-    })
-
-    this.mainService.getHistory(language).subscribe(value => {
-      this.movies.push({name: 'History', value: value.results.slice(15, 20)})
-
-    })
-     })
   }
 
   addMovie(item: IMovie) {

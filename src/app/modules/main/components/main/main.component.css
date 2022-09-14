@@ -1,26 +1,27 @@
 .container {
-  width: 80%;
   margin: 2% auto;
   min-height: 1000px;
 }
 
 .container_movie {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 40px;
+  flex-wrap: wrap;
+  column-gap: 1%;
+  width: 100%;
 }
-.movies {
-  display: flex;
-  column-gap: 10px;
+
+.container h2{
+  font-size: 25px;
 }
 
 .movie {
   display: flex;
+  width: 19%;
   flex-direction: column;
   text-align: center;
   align-items: center;
-  row-gap: 10px;
   position: relative;
+  margin-top: 2%;
 }
 
 .movie:hover{
@@ -29,6 +30,7 @@
 
 .movie h3 {
   margin: 0;
+  font-size: 16px;
 }
 
 .addMovie{

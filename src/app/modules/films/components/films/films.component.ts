@@ -15,28 +15,36 @@ export class FilmsComponent implements OnInit {
   genres:IGenre[] = [];
   films:IMovie[] = [];
   movieOrSerial:string = '';
+  language:string;
 
   pageId:number = 1;
 
   constructor(private filmsService:FilmsService,private route:Router,private appService:AppService) { }
 
-  private getFilms(pageId:number,movieOrSerial:string){
-    this.filmsService.getFilms(pageId,movieOrSerial).subscribe(value => {
+  private getFilms(pageId:number,movieOrSerial:string,language:string){
+    this.filmsService.getFilms(pageId,movieOrSerial,language).subscribe(value => {
       this.films = value.results
     })
   }
 
   ngOnInit(): void {
-    this.movieOrSerial = this.route.url.slice(1);
-    this.filmsService.getGenres(this.movieOrSerial).subscribe(value => {
-      this.genres = value.genres
+
+    this.appService.globalLanguage.subscribe(language => {
+
+      this.language = language;
+
+      this.movieOrSerial = this.route.url.slice(1);
+      this.filmsService.getGenres(this.movieOrSerial,language).subscribe(value => {
+        this.genres = value.genres
+      })
+
+      this.getFilms(this.pageId,this.movieOrSerial,language)
     })
 
-    this.getFilms(this.pageId,this.movieOrSerial)
   }
 
   onPageChange(page: number) {
-    this.getFilms(page,this.movieOrSerial)
+    this.getFilms(page,this.movieOrSerial,this.language)
   }
 
   addMovie(film: IMovie) {

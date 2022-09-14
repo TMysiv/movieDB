@@ -16,7 +16,7 @@ export class ActorsService {
   }
 
   getActors(pageId:number):Observable<IActors>{
-    return this.httpClient.get<IActors>(this.url + 'popular?' + this.apikey + `&page=${pageId}`)
+    return this.httpClient.get<IActors>(this.url + 'popular?' + this.apikey  + `&page=${pageId}` )
   }
 
   getActorDetails(id:string):Observable<IActorDetails>{

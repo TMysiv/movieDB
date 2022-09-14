@@ -17,19 +17,19 @@ export class FilmsService {
 
   }
 
-  getGenres(movieOrSerial: string): Observable<IGenres> {
+  getGenres(movieOrSerial: string,language:string): Observable<IGenres> {
     return this.httpClient.get<IGenres>(
-      this.urlGenres + `${movieOrSerial}/list?` + this.apikey )
+      this.urlGenres + `${movieOrSerial}/list?` + this.apikey + `&language=${language}` )
   }
 
-  getFilms(pageId: number, movieOrSerial: string): Observable<IMovies> {
+  getFilms(pageId: number, movieOrSerial: string,language:string): Observable<IMovies> {
     return this.httpClient.get<IMovies>(
-      this.url + `${movieOrSerial}?` + this.apikey  + `&page=${pageId}`)
+      this.url + `${movieOrSerial}?` + this.apikey  + `&page=${pageId}` + `&language=${language}`)
   }
 
-  getFilmsByGenre(genreId: string, pageId: number, movieOrSerial: string): Observable<IMovies> {
+  getFilmsByGenre(genreId: string, pageId: number, movieOrSerial: string,language:string): Observable<IMovies> {
     return this.httpClient.get<IMovies>(
-      this.url + `${movieOrSerial}?` + this.apikey  + `&with_genres=${genreId}` + `&page=${pageId}`)
+      this.url + `${movieOrSerial}?` + this.apikey  + `&with_genres=${genreId}` + `&page=${pageId}` + `&language=${language}`)
   }
 
 

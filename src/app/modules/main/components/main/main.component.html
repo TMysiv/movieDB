@@ -15,10 +15,9 @@
 
 <div class="container">
 
-  <div class="container_movie" *ngFor="let movie of movies">
-    <h2>{{movie.name}}</h2>
-    <div class="movies">
-      <div *ngFor="let item of movie.value" class="movie">
+    <h2>{{language === 'uk-UK' ? 'Найбільш Рейтингові': 'Top Rating'}}</h2>
+  <div class="container_movie">
+      <div *ngFor="let item of movies" class="movie">
         <a [routerLink]="['movies',item.id]">
           <img src="https://image.tmdb.org/t/p/w200/{{item.poster_path}}">
         </a>
@@ -29,7 +28,6 @@
         </div>
         <ngb-rating [rate]="item.vote_average"></ngb-rating>
         <h3>{{item.title}}</h3>
-      </div>
     </div>
   </div>
 
