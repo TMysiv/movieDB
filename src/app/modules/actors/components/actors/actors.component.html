@@ -4,13 +4,13 @@
     <div class="actor" *ngFor="let actor of actors">
       <a [routerLink]="[actor.id]">
         <img src="https://image.tmdb.org/t/p/w300/{{actor.profile_path}}" alt="{{actor.name}}" class="actor_image">
-        <h4>{{actor.name}}</h4>
+        <h3>{{actor.name}}</h3>
       </a>
     </div>
   </div>
 
   <ngb-pagination
-    [collectionSize]="1000"
+    [collectionSize]="totalPages"
     [(page)]="pageId"
     [maxSize]="5"
     [boundaryLinks]="true"

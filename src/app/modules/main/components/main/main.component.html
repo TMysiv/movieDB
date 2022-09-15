@@ -15,19 +15,19 @@
 
 <div class="container">
 
-    <h2>{{language === 'uk-UK' ? 'Найбільш Рейтингові': 'Top Rating'}}</h2>
+  <h2>{{language === 'uk-UK' ? 'Найбільш Рейтингові' : 'Top Rating'}}</h2>
   <div class="container_movie">
-      <div *ngFor="let item of movies" class="movie">
-        <a [routerLink]="['movies',item.id]">
-          <img src="https://image.tmdb.org/t/p/w200/{{item.poster_path}}">
-        </a>
-        <div class="addMovie">
-          <button mat-icon-button (click)="addMovie(item)">
-            <mat-icon class="mat-icon">favorite</mat-icon>
-          </button>
-        </div>
-        <ngb-rating [rate]="item.vote_average"></ngb-rating>
-        <h3>{{item.title}}</h3>
+    <div *ngFor="let item of movies" class="movie">
+      <a [routerLink]="['movies',item.id]">
+        <img src="https://image.tmdb.org/t/p/w200/{{item.poster_path}}">
+      </a>
+      <div class="addMovie">
+        <button mat-icon-button (click)="addMovie(item)">
+          <mat-icon class="mat-icon">favorite</mat-icon>
+        </button>
+      </div>
+      <ngb-rating [rate]="item.vote_average" class="rating"></ngb-rating>
+      <h3>{{item.title}}</h3>
     </div>
   </div>
 

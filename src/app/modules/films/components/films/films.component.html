@@ -18,12 +18,12 @@
         </button>
       </div>
       <ngb-rating [rate]="film.vote_average"></ngb-rating>
-      <h4>{{movieOrSerial === 'movie' ? film.title : film.name}}</h4>
+      <h3>{{movieOrSerial === 'movie' ? film.title : film.name}}</h3>
     </div>
   </div>
 
   <ngb-pagination
-    [collectionSize]="1000"
+    [collectionSize]="totalPages"
     [(page)]="pageId"
     [maxSize]="5"
     [boundaryLinks]="true"

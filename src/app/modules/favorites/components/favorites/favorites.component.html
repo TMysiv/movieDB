@@ -1,4 +1,5 @@
 <div class="container" *ngIf="favorites">
+  <h1>{{favorites.length === 0 ? 'Ooooops. You do not have favorite films' : ''}}</h1>
   <div *ngFor="let film of favorites" class="film">
       <img src="https://image.tmdb.org/t/p/w200/{{film.poster_path}}">
     <div class="film_details">

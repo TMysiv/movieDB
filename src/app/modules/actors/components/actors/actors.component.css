@@ -17,13 +17,21 @@
   background: white;
   box-shadow: 2px 2px 2px gainsboro;
   text-align: center;
+}
+.actor img {
+  width: 95%;
+}
 
+ h2 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: bold;
 }
 
 .actor:hover{
   transform: scale(1.2);
 }
-.actor h4{
+.actor h3{
   font-weight: bold;
   margin-top: 10px;
 }
@@ -37,4 +45,33 @@ a{
   color: black;
 }
 
+@media screen and (max-width: 900px){
 
+  .actor h3 {
+    font-size: 14px;
+  }
+
+}
+
+@media screen and (max-width: 750px){
+
+  .actor h3 {
+    font-size: 11px;
+  }
+
+  .actor {
+    width: 24%;
+  }
+}
+@media screen and (max-width: 500px){
+
+  .actor h3 {
+    font-size: 10px;
+  }
+
+  .actor {
+    width: 32%;
+  }
+
+
+}

@@ -11,6 +11,7 @@ export class ActorsComponent implements OnInit {
 
   actors: IActor[];
   pageId: number = 1;
+  totalPages:number;
 
 
   constructor(private actorsService: ActorsService) {
@@ -19,6 +20,7 @@ export class ActorsComponent implements OnInit {
   private getActors(pageId: number) {
     this.actorsService.getActors(pageId).subscribe(value => {
       this.actors = value.results
+      this.totalPages = value.total_pages;
     })
   }
 

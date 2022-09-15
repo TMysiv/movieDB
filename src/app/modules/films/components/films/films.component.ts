@@ -16,14 +16,15 @@ export class FilmsComponent implements OnInit {
   films:IMovie[] = [];
   movieOrSerial:string = '';
   language:string;
-
   pageId:number = 1;
+  totalPages:number;
 
   constructor(private filmsService:FilmsService,private route:Router,private appService:AppService) { }
 
   private getFilms(pageId:number,movieOrSerial:string,language:string){
     this.filmsService.getFilms(pageId,movieOrSerial,language).subscribe(value => {
       this.films = value.results
+      this.totalPages = value.total_pages
     })
   }
 

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {IMovie} from "../../interfaces/movie";
 import {AppService} from "../../services/app.service";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-header',
@@ -10,22 +10,36 @@ import {AppService} from "../../services/app.service";
 export class HeaderComponent implements OnInit {
 
   favorites: number;
-  language:string
+  language: string;
+  form: FormGroup;
 
-
-  constructor(private appService:AppService) {
+  constructor(private appService: AppService) {
+    this.createForm()
   }
 
   ngOnInit(): void {
-    this.appService.globalLanguage.subscribe( language =>{
+    this.appService.favoriteMovies.subscribe(value => {
+      this.favorites = value;
+    })
+
+    this.appService.globalLanguage.subscribe(language => {
       this.language = language
     })
-      const movies = localStorage.getItem('favorites');
-      this.favorites = (movies ? JSON.parse(movies) : []).length;
 
   }
 
   chooseLanguage(language: string) {
     this.appService.chooseLanguage(language)
+  }
+
+  createForm(): void {
+    this.form = new FormGroup({
+      search: new FormControl('')
+    })
+  }
+
+  searchMovie() {
+    this.appService.searchMovie.next(this.form.value.search)
+    this.form.reset()
   }
 }

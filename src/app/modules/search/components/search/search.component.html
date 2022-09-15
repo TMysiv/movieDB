@@ -1,0 +1,20 @@
+<div class="container" >
+
+    <h1>{{searchMovie.length === 0 ? 'Ooooops. We can not find it' : ''}}</h1>
+  <div class="films">
+    <div *ngFor="let film of searchMovie" class="film">
+      <img src="https://image.tmdb.org/t/p/w200/{{film.poster_path}}">
+      <h3>{{film.title ? film.title : film.name}}</h3>
+    </div>
+  </div>
+
+  <ngb-pagination
+    [collectionSize]="totalPages"
+    [(page)]="pageId"
+    [maxSize]="5"
+    [boundaryLinks]="true"
+    (pageChange)="onPageChange($event)"
+    class="{{searchMovie.length < 1 ?  'pagination':'d-flex justify-content-center mt-5 text-black'}}"
+  ></ngb-pagination>
+
+</div>

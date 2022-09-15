@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MainService} from "../../services/main.service";
 import {IMovie} from "../../../../interfaces/movie";
 import {AppService} from "../../../../services/app.service";
@@ -14,7 +14,6 @@ export class MainComponent implements OnInit {
   nowPlaying: IMovie[] = [];
   movies: IMovie[] = [];
   language:string
-
 
   constructor(private mainService: MainService, private appService: AppService, private activatedRoute: ActivatedRoute) {
   }

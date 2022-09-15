@@ -12,6 +12,7 @@ import {AppService} from "../../../../services/app.service";
 export class FilmByGenreComponent implements OnInit {
 
   pageId: number = 1;
+  totalPages: number;
   films: IMovie[] = [];
   genreId: string = '';
   genreName: string = '';
@@ -44,7 +45,8 @@ export class FilmByGenreComponent implements OnInit {
 
   private getFilms(genreId: string, pageId: number, movieOrSerial: string,language:string) {
     this.filmsService.getFilmsByGenre(genreId, pageId, movieOrSerial,language).subscribe(value => {
-      this.films = value.results
+      this.films = value.results;
+      this.totalPages = value.total_pages;
     })
   }
 

@@ -1,6 +1,7 @@
 .container {
   width: 80%;
   margin: 2% auto;
+  min-height: 1000px;
 }
 
 .description {
@@ -29,4 +30,8 @@
   width: 100px;
   height: 100px;
   background: bisque;
+}
+
+.video{
+  width: 500px;
 }

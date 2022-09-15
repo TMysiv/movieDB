@@ -1,0 +1,33 @@
+.container {
+  width: 80%;
+  margin: 2% auto;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.films {
+  display: flex;
+  column-gap: 10px;
+  flex-wrap: wrap;
+  row-gap: 20px;
+}
+
+.film {
+  display: flex;
+  width: 19%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 23%;
+  position: relative;
+}
+
+.film h3 {
+  margin: 0;
+}
+
+.pagination {
+  display: none;
+}

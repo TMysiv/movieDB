@@ -13,6 +13,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatBadgeModule} from "@angular/material/badge";
 import {MatButtonModule} from "@angular/material/button";
 import {MatMenuModule} from "@angular/material/menu";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,18 +21,19 @@ import {MatMenuModule} from "@angular/material/menu";
     HeaderComponent,
     FooterComponent,
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        AppRoutingModule,
-        RouterModule,
-        NgbModule,
-        MatIconModule,
-        MatBadgeModule,
-        MatButtonModule,
-        MatMenuModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    AppRoutingModule,
+    RouterModule,
+    NgbModule,
+    MatIconModule,
+    MatBadgeModule,
+    MatButtonModule,
+    MatMenuModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

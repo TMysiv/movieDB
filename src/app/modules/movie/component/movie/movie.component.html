@@ -3,7 +3,7 @@
     videoId="{{videoDetails.key}}"
     suggestedQuality="highres"
     [height]="500"
-    [width]="1100"
+    [width]="1000"
     [startSeconds]="0"
   >
   </youtube-player>
@@ -17,7 +17,7 @@
       <p><span style="font-weight: bold">{{language === 'uk-UK' ? 'Жанри':'Genres'}}Genres: </span>
         <span *ngFor="let genre of movieDetails.genres" >{{genre.name}},  </span></p>
       <p><span style="font-weight: bold">{{language === 'uk-UK' ? 'Дата Виходу':'Release Date'}}:
-      </span> {{movieDetails.release_date}}</p>
+      </span> {{movieDetails.release_date }}</p>
       <p><span style="font-weight: bold">{{language === 'uk-UK' ? 'Бюджет':'Budget'}}:</span> {{movieDetails.budget}} $</p>
     </div>
       <h2>{{language === 'uk-UK' ? 'Актори':'Actors'}}</h2>
